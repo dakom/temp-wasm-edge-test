@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>my_app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script src="polyfill/text-encoding/lib/encoding-indexes.js"></script>
+        <script src="polyfill/text-encoding/lib/encoding.js"></script>
+        <script>
+            if(!TextEncoder) {
+                console.error("Polyfill for TextEncoder failed!!!");
+            }
+        </script>
+        <script type="module">
+            import init from './target/wasm-build/pkg/app.js';
+            (async () => {
+                await init();
+            })();
+         </script>
+    </body>
+</html>

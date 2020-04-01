@@ -1,0 +1,7 @@
+{
+  "scripts": {
+      "build": "npm run _build:compile && npm run _build:bindgen",
+      "_build:compile": "cargo build --target wasm32-unknown-unknown",
+      "_build:bindgen": "wasm-bindgen ./target/wasm32-unknown-unknown/debug/app.wasm --target web --out-dir ./target/wasm-build/pkg"
+  }
+}
